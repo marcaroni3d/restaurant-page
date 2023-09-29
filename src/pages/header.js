@@ -1,10 +1,19 @@
 const createHeader = function() {
     const header = document.createElement('div')
-        header.id = 'header'
+    header.id = 'header'
     const headerText = document.createElement('h1')
-        headerText.textContent = 'Restaurant Page'
+    headerText.textContent = 'Restaurant Page'
+    const navBar = createNavBar('Home', 'Menu', 'About')
+
+    header.appendChild(headerText)
+    header.appendChild(navBar)
+
+    return header;
+};
+
+const createNavBar = function(...buttons) {
     const navBar = document.createElement('div')
-        navBar.classList.add('nav-bar')
+    navBar.classList.add('nav-bar')
 
     function createNavButton(name) {
         const btn = document.createElement('button')
@@ -13,22 +22,14 @@ const createHeader = function() {
         return btn
     }
 
-    const navButtons = [
-        createNavButton('Home'),
-        createNavButton('Menu'),
-        createNavButton('About')
-    ];
-
     const docFrag = document.createDocumentFragment();
-    for (let i = 0; i < navButtons.length; i++) {
-        docFrag.appendChild(navButtons[i])
+    for (let i = 0; i < buttons.length; i++) {
+        docFrag.appendChild(createNavButton(buttons[i]))
     }
 
-    header.appendChild(headerText)
-    header.appendChild(navBar)
     navBar.appendChild(docFrag)
 
-    return header;
-};
+    return navBar;
+}
 
 export default createHeader;

@@ -1,4 +1,5 @@
 import createHeader from "./pages/header";
+import createFooter from "./pages/footer"
 import loadHome from "./pages/home";
 
 function createMain() {
@@ -12,6 +13,7 @@ function init() {
 
     content.appendChild(createHeader())
     content.appendChild(createMain())
+    content.appendChild(createFooter())
 
     loadHome()
 }

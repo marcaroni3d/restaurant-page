@@ -2,8 +2,8 @@ const createHeader = function() {
     const header = document.createElement('div')
     header.id = 'header'
     const headerText = document.createElement('h1')
-    headerText.textContent = 'Restaurant Page'
-    const navBar = createNavBar('Home', 'Menu', 'About')
+    headerText.textContent = 'Pizza Magnifique'
+    const navBar = createNavBar('HOME', 'MENU', 'ABOUT')
 
     header.appendChild(headerText)
     header.appendChild(navBar)

@@ -10,7 +10,7 @@ const createFooter = function() {
     githubLink.target = '_blank'
 
     const githubImage = new Image()
-    githubImage.src = '/src/images/github-mark-white.svg'
+    githubImage.src = 'images/github-mark-white.svg'
     githubImage.alt = 'github'
     githubImage.classList.add('github-img')
 

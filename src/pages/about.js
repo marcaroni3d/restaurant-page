@@ -32,7 +32,7 @@ const createParagraph = function(text) {
 
 const createImage = function(name, type, className) {
     const image = document.createElement('img')
-    image.src = `/src/images/${name.toLowerCase()}.${type}`
+    image.src = `images/${name.toLowerCase()}.${type}`
     image.classList.add(`${className}`)
     return image
 }

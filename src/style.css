@@ -14,8 +14,7 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-image: url('/src/images/pizza-oven.jpg');
+    background-image: url('/dist/images/pizza-oven.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;

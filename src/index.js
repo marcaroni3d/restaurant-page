@@ -1,7 +1,5 @@
 // Entry Point for website
 
-import '@fontsource/poppins';
-import '@fontsource/corinthia';
 import "./style.css";
 import init from "./init";
 import loadHome from "./pages/home";

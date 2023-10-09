@@ -3,7 +3,7 @@ const createHome = function() {
     home.id = 'home'
 
     const chefImage = document.createElement('img')
-    chefImage.src = '/src/images/pizza-chef.jpg'
+    chefImage.src = 'images/pizza-chef.jpg'
     chefImage.alt = 'Cheffery Pizza'
     chefImage.classList.add('pizza-chef-image')
     

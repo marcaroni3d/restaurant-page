@@ -46,7 +46,7 @@ body {
 
 #header > h1 {
     font-family: 'Parisienne', cursive;
-    font-size: 3rem;
+    font-size: 4rem;
     margin: 1rem;
     font-style: italic;
 }
@@ -57,16 +57,19 @@ body {
     gap: 1rem;
 }
 
-.nav-bar > button {
-    background: var(--background-dark);
+.nav-button {
+    background: transparent;
     color: var(--font-color);
     border: none;
-    border-radius: 5px;
     padding: .5rem 1rem;
     transition: transform 0.3s;
 }
 
-.nav-bar > button:hover {
+.nav-button.active {
+    border-bottom: 2px solid var(--font-color);
+}
+
+.nav-button:hover {
     cursor: pointer;
     transform: translateY(-20%);
 

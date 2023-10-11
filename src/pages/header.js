@@ -1,9 +1,13 @@
+import loadHome from "./home";
+import loadMenu from "./menu";
+import loadAbout from "./about";
+
 const createHeader = function() {
     const header = document.createElement('div')
     header.id = 'header'
     const headerText = document.createElement('h1')
     headerText.textContent = 'Pizza Magnifique'
-    const navBar = createNavBar('HOME', 'MENU', 'ABOUT')
+    const navBar = createNavBar()
 
     header.appendChild(headerText)
     header.appendChild(navBar)
@@ -11,25 +15,52 @@ const createHeader = function() {
     return header;
 };
 
-const createNavBar = function(...buttons) {
+const createNavBar = function() {
     const navBar = document.createElement('div')
     navBar.classList.add('nav-bar')
 
-    function createNavButton(name) {
-        const btn = document.createElement('button')
-        btn.classList.add('nav-button')
-        btn.appendChild(document.createTextNode(name))
-        return btn
-    }
+    const homeButton = document.createElement('button')
+    homeButton.classList.add('nav-button', 'active')
+    homeButton.textContent = 'HOME'
+    homeButton.addEventListener('click', (e) => {
+        if (e.target.classList.contains('active')) return
+        setActiveButton(homeButton)
+        loadHome()
+    })
 
-    const docFrag = document.createDocumentFragment();
-    for (let i = 0; i < buttons.length; i++) {
-        docFrag.appendChild(createNavButton(buttons[i]))
-    }
+    const menuButton = document.createElement('button')
+    menuButton.classList.add('nav-button')
+    menuButton.textContent = 'MENU'
+    menuButton.addEventListener('click', (e) => {
+        if (e.target.classList.contains('active')) return
+        setActiveButton(menuButton)
+        loadMenu()
+    })
 
-    navBar.appendChild(docFrag)
+    const aboutButton = document.createElement('button')
+    aboutButton.classList.add('nav-button')
+    aboutButton.textContent = 'ABOUT'
+    aboutButton.addEventListener('click', (e) => {
+        if (e.target.classList.contains('active')) return
+        setActiveButton(aboutButton)
+        loadAbout()
+    })
+
+    navBar.appendChild(homeButton)
+    navBar.appendChild(menuButton)
+    navBar.appendChild(aboutButton)
 
     return navBar;
+}
+
+const setActiveButton = function(button) {
+    const buttons = document.querySelectorAll('.nav-button')
+
+    buttons.forEach((button) => {
+        button.classList.remove('active')
+    })
+    
+    button.classList.add('active')
 }
 
 export default createHeader;
